@@ -8,7 +8,9 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "0.41.0"
+    "@redwoodjs/core": "0.41.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.1.7"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
@@ -20,5 +22,14 @@
   },
   "prisma": {
     "seed": "yarn rw exec seed"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "dependencies": {},
+  "lint-staged": {
+    "**/*/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "npx prettier --write"
+    ]
   }
 }
